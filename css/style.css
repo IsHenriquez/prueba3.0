@@ -1,0 +1,41 @@
+.nosotros {
+    width: 100%;
+    padding: 5px;
+}
+
+#form-a {
+    background-color: rgba(148, 156, 37, 0.534);
+    margin-top: 40px;
+    border-radius: 12px;
+    text-align: left;
+    margin-left: 350px;
+    color: rgb(29, 31, 3);
+    font-size: 20px;
+}
+
+#form-b {
+    background-color: rgba(50, 51, 44, 0.084);
+    margin-top: 40px;
+    border-radius: 12px;
+    text-align: left;
+    color: rgb(29, 31, 3);
+    font-size: 20px;
+}
+
+#button {
+    background-color: rgba(48, 98, 117, 0.856);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: aliceblue;
+    margin-left: 250px;
+}
+
+.form-group {
+    padding: 5px;
+}
+
+.ban,
+.corr,
+.iden {
+    background-color: rgba(253, 253, 252, 0.642);
+}
