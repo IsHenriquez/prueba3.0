@@ -1,4 +1,5 @@
 
+    /* eventa carga de documento*/
     document.addEventListener("DOMContentLoaded", () => {
         console.log("El documento se ha cargado");
     });
@@ -61,13 +62,13 @@
     }
 
     
-
+/*evento teclado*/
  $(".form-control").on("keypress",function(){
      $(this).css("background-color","#111111");
      $(this).css("color","#ffffff");
  });
 
-
+/*evento mouse*/
  $(".card").on("mouseenter",function(){
     $(this).css("opacity","0.5");
  }).on("mouseleave",function(){
@@ -82,7 +83,7 @@
 });
 
 
-
+/* capturamos ele vento*/
   $("#sendform").on("click",function(e){
     e.preventDefault();
     var email  = $("#email-usuario"),
@@ -93,7 +94,7 @@
     selcomuna  = $("#SelectComunas option:selected"),
     check = $("#invalidCheck2");
     
-
+/* validamos*/
     if(email.val() == ""){
         alert("el campo email es obligatorio");
         return false;
