@@ -65,36 +65,36 @@
         <br>
         <div class="form-group">
             <label for="exampleFormControlInput1">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre@ejemplo.com">
+            <input type="email" name="email" id="email-usuario" class="form-control" placeholder="Nombre@ejemplo.com">
         </div>
         <br>
         <div class="form-group">
             <label for="exampleFormControlInput1">Nombre</label>
-            <input type="text" class="form-control" placeholder="Nombre" required>
+            <input type="text" name="nombre" id="nombre-usuario" class="form-control" placeholder="Nombre" required>
         </div>
         <br>
         <div class="form-group">
             <label for="exampleFormControlInput1">Apellidos</label>
-            <input type="text" class="form-control" placeholder="Apellidos" required>
+            <input type="text" name="apellidos" id="apellido-usuario" class="form-control" placeholder="Apellidos" required>
             <br>
         </div>
         <br>
         <div id="num" class="input-group form-outline">
             <span class="input-group-text" id="inputGroupPrepend2">+56</span>
-            <input type="tel" class="form-control" id="validationDefaultTel" pattern="^\d{9}$" required placeHolder=987654321 />
+            <input type="tel" name="tel" class="form-control" id="telefono-usuario" pattern="^\d{9}$" required placeHolder=987654321 />
         </div>
         <br>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Regiones</label>
             <select class="form-control" id="SelectRegiones" onchange="cambiar_comunas(this)"> 
-                <option value="" selected disabled hidden>Seleccione...</option>
+                <option value="0" selected>Seleccione...</option>
         </select>
         </div>
         <br>
         <div class="form-group">
             <label id="LblComunas" for="exampleFormControlSelect2">Comunas</label> 
             <select class="form-control" id="SelectComunas">
-                <option value="" selected disabled hidden>Seleccione...</option>
+                <option value="0" selected>Seleccione...</option>
         </select>
         </div>
         <br>
@@ -104,7 +104,7 @@
             <label class="form-check-label" for="invalidCheck2">Acepto enviar mi información</label>
         </div>
         <div id="btn-contacto">
-            <button id="button" type="submit" class="btn btn-primary">Enviar</button>
+            <button id="sendform" type="submit" class="btn btn-primary">Enviar</button>
         </div>
 
     </form>
@@ -167,6 +167,7 @@
 
 
 </body>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!--SE LLAMA JQUERY-->
 <script src="js/apiform.js"></script>
