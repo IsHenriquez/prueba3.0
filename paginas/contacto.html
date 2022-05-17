@@ -1,0 +1,129 @@
+<body style="background: url(img/fondo3.jpg); background-size: auto; background-repeat: repeat;">
+
+    <!-- formulario -->
+    <form class="col-5" id="form-a">
+
+        <h1 class="Tit-form text-center">Contacto</h1>
+        <br>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre@ejemplo.com">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Apellidos</label>
+            <input type="text" class="form-control" placeholder="Apellidos" required>
+            <br>
+        </div>
+        <br>
+        <div id="num" class="input-group form-outline">
+            <span class="input-group-text" id="inputGroupPrepend2">+56</span>
+            <input type="tel" class="form-control" id="validationDefaultTel" pattern="^\d{9}$" required placeHolder=987654321 />
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Regiones</label>
+            <select class="form-control" id="SelectRegiones" onchange="cambiar_comunas(this)"> <!--funcion para que cuando cambie el valor de region se busquen las comunas-->
+                <option value="" selected disabled hidden>Seleccione...</option>
+        </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label id="LblComunas" for="exampleFormControlSelect2">Comunas</label>
+            <select class="form-control" id="SelectComunas">
+                <option value="" selected disabled hidden>Seleccione...</option>
+        </select>
+        </div>
+        <br>
+
+
+        <div id="check" class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
+            <label class="form-check-label" for="invalidCheck2">Acepto enviar mi información</label>
+        </div>
+        <div id="btn-contacto">
+            <button id="button" type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+
+    </form>
+
+    <!-- scripts para el formulario
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> -->
+
+    <!-- valiadacion formulario  -->
+    <script src="/js/scripts.js"></script>
+
+    <!--SE LLAMA JQUERY de la api-->
+    <script>
+        //ESTO SE EJECUTA AL INICIAR LA PAGINA
+        $("#SelectComunas").hide(); //OCULTA EL SELECT DE COMUNAS
+        $("#LblComunas").hide(); //OCULTA EL LABEL DE COMUNAS
+        //ESTAN OCULTOS PARA QUE NO SE VEAN SIN DATOS, YA QUE AUN NO SE SELECCIONA UNA REGION
+        //LUEGO SE EJECUTA UN AJAX, SIRVE PARA EJECUTAR FUNCIONES EXTERNAS
+        //GUARDAR DATOS, EDITAR DATOS, BORRAR DATOS, BUSCAR DATOS, BUSCAR ALGUN DATO ESPEFICICO, ETC ETC. ESO DEPENDE DE LA API
+        $.ajax({ //AQUI SE INICIA LA FUNCION PARA LISTAR REGIONES, EN EL FUTURO SI TE DA ERROR CON EL $ EN ALGUN PROYECTO, ES PORQUE NO ESTAS LLAMANDO JQUERY
+            url: 'https://apis.digital.gob.cl/dpa/regiones', //ESTA ES LA URL DE LA API
+            dataType: 'json', //AQUI VA EL TIPO DE DATO QUE ESPERAS RECIBIR
+            type: 'GET', //AQUI VA EL METODO DE LA API, PUEDE SER POST, PUT, GET O DELETE , DEPENDE DE LO QUE NECESITES, EN ESTE CASO ES UN GET PORQUE TRAIGO DATOS
+            success: function(response) { // EL SUCCESS INDICA QUE SE REALIZO CORRECTAMENTE LA PETICION, LOS RESULTADOS VIENEN EN EL RESPONSE
+                //EL RESPONSE VARIA DEPENDIENDO DE LA API, EN ESTE CASO ES UN ARREGLO CON LAS REGIONES
+                response.forEach(function(valor_actual) { //RECORRO EL ARREGLO CON UN FOREACH
+                    var nombre_region = valor_actual.nombre; //OBTENGO EL NOMBRE
+                    var codigo_region = valor_actual.codigo; //OBTENGO EL CODIGO
+                    $("#SelectRegiones").append("<option value=" + codigo_region + ">" + nombre_region + "</option>"); // AGREGO LAS OPCIONES AL SELECT
+                });
+            }
+        });
+
+
+        //EN ESTA PARTE SE CREA LA FUNCION PERO NO SE EJECUTA YA QUE NO SE ESTA LLAMANDO
+        //SE EJECUTARA CUANDO SE CAMBIE EL VALOR DEL SELECT DE REGIONES
+        function cambiar_comunas(region) { // region ES EL SELECT COMPLETO
+
+            var id_region = region.value; //AQUI SOLO OBTENGO EL VALOR SELECCIONADO
+            if (id_region !== null && id_region !== "") { //REVISO POR PRECAUCION QUE NO VENGA VACIO
+                var selectobject = document.getElementById("SelectComunas"); //SELECCIONO EL SELECT DE COMUNAS
+                $("#SelectComunas").show(); //MUESTRO EL SELECT DE COMUNAS
+                $("#LblComunas").show(); //MUESTRO EL LABEL DE COMUNAS
+                //EN ESTA FUNCION ELIMINO LAS OPCIONES ANTERIORES PERO DEJO LA OPCION POR DEFAULT
+                var i, L = selectobject.options.length - 1;
+                for (i = L; i >= 1; i--) {
+                    selectobject.remove(i);
+                }
+                //Y VUELVO A EJECUTAR UNA API
+                $.ajax({
+                    url: 'https://apis.digital.gob.cl/dpa/regiones/' + id_region + '/comunas', //EN ESTE CASO ENVIO EL CODIGO DE REGION, PARA QUE ME TRAIGA LAS COMUNAS DE ESA REGION
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function(response) {
+                        //AQUI SE HACE LO MISMO QUE EN EL DE REGIONES, SE CARGAN LAS COMUNAS CON SU NOMBRE Y CODIGO
+                        response.forEach(function(valor_actual) {
+                            var nombre_comuna = valor_actual.nombre;
+                            var codigo_comuna = valor_actual.codigo;
+                            $("#SelectComunas").append("<option value=" + codigo_comuna + ">" + nombre_comuna + "</option>");
+                        });
+                        //FINALMENTE SE SELECCIONA LA OPCION POR DEFECTO PARA QUE NO QUEDE FEO
+                        $('#SelectComunas option').prop('selected', function() {
+                            return this.defaultSelected;
+                        });
+                    }
+                });
+            }
+        }
+    </script>
+
+
+
+
+    <!-- scripts de librerias -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+</body>

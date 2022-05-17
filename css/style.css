@@ -10,14 +10,14 @@
     text-align: left;
     margin-left: 650px;
     color: rgba(255, 255, 255, 0.842);
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 #form-b {
-    background-color: rgba(1, 1, 1, 0.791);
-    text-align: center;
-    color: rgba(246, 246, 246, 0.786);
-    font-size: 100px;
+    background-color: rgba(1, 1, 1, 0.791) !important;
+    text-align: center !important;
+    color: rgba(246, 246, 246, 0.786) !important;
+    font-size: 100px !important;
 }
 
 #button {
@@ -41,7 +41,8 @@
 }
 
 .badge {
-    font-size: 30px;
+    font-size: 30px !important;
+    ;
 }
 
 footer {
@@ -50,4 +51,43 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+
+/* estilo estrellas cards */
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#form p {
+    text-align: center;
+}
+
+#form label {
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    color: grey;
+}
+
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover~label {
+    color: orange;
+}
+
+input[type="radio"]:checked~label {
+    color: orange;
 }
