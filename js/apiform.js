@@ -1,5 +1,5 @@
 
-    /* eventa carga de documento*/
+    /* evento carga de documento*/
     document.addEventListener("DOMContentLoaded", () => {
         console.log("El documento se ha cargado");
     });
@@ -75,6 +75,7 @@
     $(this).css("opacity","1");
  });
 
+ /* evento ventana*/
  $(".card .btn").on("click",function(e){
     e.preventDefault();
     var w = window.open("", "popupWindow", "width=600, height=400, scrollbars=yes");
@@ -83,7 +84,7 @@
 });
 
 
-/* capturamos ele vento*/
+/* capturamos el vento*/
   $("#sendform").on("click",function(e){
     e.preventDefault();
     var email  = $("#email-usuario"),
