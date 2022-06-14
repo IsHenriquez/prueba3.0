@@ -1,3 +1,13 @@
+
+
+
+
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+
 <title>FUNDACIONES</title>
 
 <link rel="stylesheet" href="css/donaciones.css">
@@ -13,47 +23,47 @@
 
             <div class="row">
                 <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="img/donaciones/2016-10-18_11-22-26_5_619.png" title="What is Lorem Ipsum?
+                    <a class="lightbox" href="{% static 'img/donaciones/2016-10-18_11-22-26_5_619.png' %}"  title="What is Lorem Ipsum?
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">
-                        <img src="img/donaciones/2016-10-18_11-22-26_5_619.png">
-                    </a>
+                        <img  src="{% static 'img/donaciones/2016-10-18_11-22-26_5_619.png' %}">
+                    </a>1
 
                 </div>
                 <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="img/donaciones/2016-10-19_08-54-30_8_627.png" title="Where does it come from?
+                    <a class="lightbox"  href="{% static 'img/donaciones/2016-10-19_08-54-30_8_627.png' %}" title="Where does it come from?
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
                         de Finibus Bonorum et Malorum  (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32. ">
-                        <img src=" img/donaciones/2016-10-19_08-54-30_8_627.png ">
-                    </a>
+                        <img  src="{% static 'img/donaciones/2016-10-19_08-54-30_8_627.png ' %}">
+                    </a>2
                 </div>
                 <div class="col-sm-12 col-md-4 ">
-                    <a class="lightbox " href="img/donaciones/2016-10-19_09-51-25_11_631.jpg " title="Where does it come from?
+                    <a class="lightbox "  href="{% static 'img/donaciones/2016-10-19_09-51-25_11_631.jpg ' %}" title="Where does it come from?
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
                         de Finibus Bonorum et Malorum  (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32. ">
-                        <img src="img/donaciones/2016-10-19_09-51-25_11_631.jpg ">
-                    </a>
+                        <img  src="{% static 'img/donaciones/2016-10-19_09-51-25_11_631.jpg ' %}">
+                    </a>3
 
                 </div>
                 <div class="col-sm-6 col-md-4 ">
-                    <a class="lightbox " href="img/donaciones/2017-11-07_15-25-09_27_1787.jpg " title="Where does it come from?
+                    <a class="lightbox "  href="{% static 'img/donaciones/2017-11-07_15-25-09_27_1787.jpg ' %}" title="Where does it come from?
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
                         de Finibus Bonorum et Malorum  (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32. ">
-                        <img src="img/donaciones/2017-11-07_15-25-09_27_1787.jpg " alt="Coast ">
-                    </a>
+                        <img  src="{% static 'img/donaciones/2017-11-07_15-25-09_27_1787.jpg' %}"alt="Coast ">
+                    </a>4
                 </div>
                 <div class="col-sm-6 col-md-4 ">
-                    <a class="lightbox " href="img/donaciones/5_logo-organizacion-dame-vida-tenjo_1000x666.png " title="Where does it come from?
+                    <a class="lightbox " href="{% static 'img/donaciones/5_logo-organizacion-dame-vida-tenjo_1000x666.png' %}" title="Where does it come from?
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
                         de Finibus Bonorum et Malorum  (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32. ">
-                        <img src="img/donaciones/5_logo-organizacion-dame-vida-tenjo_1000x666.png " alt="Rails ">
-                    </a>
+                        <img  src="{% static 'img/donaciones/5_logo-organizacion-dame-vida-tenjo_1000x666.png' %}"alt="Rails ">
+                    </a>5
                 </div>
                 <div class="col-sm-6 col-md-4 ">
-                    <a class="lightbox " href="img/donaciones/Fundacion-YO-AMO-ANIMALES.jpg " title="Where does it come from?
+                    <a class="lightbox "  href="{% static 'img/donaciones/Fundacion-YO-AMO-ANIMALES.jpg ' %}" title="Where does it come from?
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
                         de Finibus Bonorum et Malorum  (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32. ">
-                        <img src="img/donaciones/Fundacion-YO-AMO-ANIMALES.jpg " alt="Traffic ">
-                    </a>
+                        <img  src="{% static 'img/donaciones/Fundacion-YO-AMO-ANIMALES.jpg ' %}" alt="Traffic ">
+                    </a>6
                 </div>
 
             </div>
@@ -73,3 +83,7 @@
 
 
 </body>
+
+
+
+{% endblock %}

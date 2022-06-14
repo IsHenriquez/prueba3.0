@@ -1,3 +1,10 @@
+
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+
 <body style="background: url(img/fondo3.jpg); background-size: auto; background-repeat: repeat;">
 
     <!-- formulario -->
@@ -58,7 +65,7 @@
     </script> -->
 
     <!-- valiadacion formulario  -->
-    <script src="/js/scripts.js"></script>
+    <script src="{% static '/js/scripts.js' %}"></script>
 
     <!--SE LLAMA JQUERY de la api-->
     <script>
@@ -118,12 +125,13 @@
             }
         }
     </script>
-
-
-
-
     <!-- scripts de librerias -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-
+    <script src="{% static 'https://code.jquery.com/jquery-3.3.1.js' %}" ></script>
 </body>
+
+
+
+
+
+
+{% endblock %}
